@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- saved from url=(0075)https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&csid=677572&id=12816 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
+<title>Wiki</title>
+<link rel="SHORTCUT ICON" href="https://wis.fit.vutbr.cz/images/favicon.ico" type="image/x-icon">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./Wiki_files/style.css" type="text/css">
+<link rel="stylesheet" href="./Wiki_files/cwk-css.php" type="text/css">
+<script type="text/javascript">
+var ClockMonths = new Array("January", "February", "March", "April", "May", "June",
+"July", "August", "September", "October", "November", "December");
+var ClockElm;
+var ClockDiff=0;
+
+function ClockInit()
+{
+    if (!document.getElementById) return;
+    ClockElm = document.getElementById('clock');
+    if (!ClockElm || !ClockElm.innerHTML) return;
+    var ClockTm = new Date();
+    var datefmt = /^(\d\d?)\. ([^ ]+) (\d{4}) (\d\d):(\d\d):(\d\d)$/;
+    var datep = datefmt.exec(ClockElm.innerHTML);
+    if (datep) {
+	var SrvClock = new Date();
+	SrvClock.setDate(datep[1]);
+	for (var i = 0; i<12; i++) {
+	    if (datep[2] == ClockMonths[i]) {
+		SrvClock.setMonth(i);
+	    }
+	}
+	SrvClock.setYear(datep[3]);
+	SrvClock.setHours(datep[4]);
+	SrvClock.setMinutes(datep[5]);
+	SrvClock.setSeconds(datep[6]);
+	ClockDiff = 500 + SrvClock.getTime()-ClockTm.getTime();
+    }
+    setInterval(UpdateClock, 1000);
+}
+
+function UpdateClock()
+{
+    var hr,min,sec,day,mon,year;
+
+    if (!ClockElm || !ClockElm.innerHTML) return;
+    var ClockTm = new Date();
+    ClockTm.setMilliseconds(ClockDiff+ClockTm.getMilliseconds());
+    if (ClockTm.getFullYear) year = ClockTm.getFullYear();
+    else year = ClockTm.getYear+1900;
+    mon = ClockTm.getMonth();
+    day = ClockTm.getDate();
+    hr = ClockTm.getHours();
+    min = ClockTm.getMinutes();
+    sec = ClockTm.getSeconds();
+    ClockElm.innerHTML = day+'. '+ClockMonths[mon]+' '+year+' '+(hr<=9?'0':'')+hr+':'+(min<=9?'0':'')+min+':'+(sec<=9?'0':'')+sec; 
+}
+
+function filter_empty(name)
+{
+    var i;
+    for (i = 0; i < document[name].elements.length; i++) {
+	var o = document.forms[name].elements[i];
+	if (o.type != 'text' && o.type != 'select-one') continue;
+	if (o.value == '') o.disabled = true;
+    }
+    return true;
+}
+</script>
+</head>
+<body onload="ClockInit()">
+<table class="noprint" width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #3498db">
+<tbody><tr><td><a href="https://www.fit.vutbr.cz/"><img class="FITlogo" src="./Wiki_files/fitnewz.png" alt="FIT"></a></td>
+<th style="width: 12.5%; border-left: 1px solid #fff"><a class="stab" href="https://wis.fit.vutbr.cz/FIT/st/index.php">home</a></th>
+<th style="width: 12.5%; border-left: 1px solid #fff"><a class="stab" href="https://wis.fit.vutbr.cz/FIT/st/study.php">study</a></th>
+<th style="width: 12.5%; border-left: 1px solid #fff"><a class="stab" href="https://wis.fit.vutbr.cz/FIT/st/courses.php">courses</a></th>
+<th style="width: 12.5%; border-left: 1px solid #fff"><a class="stabs" href="https://wis.fit.vutbr.cz/FIT/st/study-v.php">assessment</a></th>
+<th style="width: 12.5%; border-left: 1px solid #fff"><a class="stab" href="https://wis.fit.vutbr.cz/FIT/st/reg.php">registration</a></th>
+<th style="width: 12.5%; border-left: 1px solid #fff"><a class="stab" href="https://wis.fit.vutbr.cz/FIT/st/admin.php">accounts</a></th>
+<th style="width: 12.5%; border-left: 1px solid #fff"><a class="stab" href="https://wis.fit.vutbr.cz/FIT/st/other.php">other</a></th>
+<th style="width: 12.5%; border-left: 1px solid #fff"><a class="stab" href="https://wis.fit.vutbr.cz/FIT/st/logoff.php?logoff=1">logout</a></th>
+<td valign="middle">&nbsp;<a style="color:white; text-decoration: none" href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Projekt2&amp;csid=677572&amp;id=12816">česky</a>&nbsp;</td></tr>
+</tbody></table>
+<table cellpadding="4" width="100%" bgcolor="white"><tbody><tr><td>Login xliska20, <b>Líška Samuel</b>, 1st year BIT, full-time, FIT<br>
+Ac.Year 2018/2019 study no. 2: regular enrollment<p></p></td><td align="right"><a href="https://wis.fit.vutbr.cz/FIT/st/course-sl.php?id=677572">Zpět na termíny</a>&nbsp;</td></tr></tbody></table>
+<table cellpadding="0" width="100%" height="75%" bgcolor="#ececec" border="0" bordercolor="#808080"><tbody><tr><td style="padding-top: 8px; border-top: solid 1px #888888; border-bottom: solid 1px #0063a5" valign="top"><table style="min-width: 700px"><tbody><tr valign="top"><td>
+<div class="leftpane">
+    <div class="home">
+[[<a class="internal" href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Main_Page&amp;csid=677572&amp;id=12816" id="wiki__top" accesskey="h" title="[H]">IZP Home</a>]]
+    </div>
+    <div id="toolbar" class="toolbar">
+   <div class="tb_main">
+
+<p>
+
+Navigation
+</p>
+
+<ul>
+<li class="level1"><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Main_Page&amp;csid=677572&amp;id=12816" class="internal" title="Main Page">Main Page</a></li>
+<li class="level1"><span class="curid"><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;action=recent&amp;csid=677572&amp;id=12816" class="internal" title="Projekt2">Recent changes</a></span></li>
+<li class="level1"><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Help:Main_Page&amp;csid=677572&amp;id=12816" class="internal" title="Help:Main Page">Help</a></li>
+</ul>
+
+<p>Page</p><div class="tb_box"><form action="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;csid=677572&amp;id=12816" class="search" id="form_search" method="get"><div class="searchform">
+<input type="hidden" name="csid" value="677572">
+<input type="hidden" name="id" value="12816">
+<input type="text" autocomplete="off" id="qsearch" accesskey="f" name="search" class="forminput" title="Enter search text" value="">
+<input type="submit" name="dogo" value="Go" class="button" title="Go"> <input type="submit" name="dosearch" value="Search" class="button" title="Search">
+</div></form>
+</div>
+
+
+<p>
+
+Toolbox
+</p>
+
+<ul>
+<li class="level1"><span class="curid"><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;action=backlink&amp;csid=677572&amp;id=12816" class="internal" title="Projekt2">What links here</a></span></li>
+<li class="level1"><span class="curid"><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;action=upload&amp;ns=IZP&amp;csid=677572&amp;id=12816" class="internal" title="Projekt2">Upload file</a></span></li>
+<li class="level1"><span class="curid"><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;action=fileinfo&amp;ns=IZP&amp;list=1&amp;csid=677572&amp;id=12816" class="internal" title="Projekt2">File list</a></span></li>
+<li class="level1"><span class="curid"><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;action=index&amp;csid=677572&amp;id=12816" class="internal" title="Projekt2">Page index</a></span></li>
+<li class="level1"><span class="curid"><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;action=history&amp;csid=677572&amp;id=12816" class="internal" title="Projekt2">History</a></span></li>
+</ul>
+</div>   </div>
+</div>
+</td><td width="90%">
+<div class="rightpane">
+    <div class="bar" id="bar_top">
+    <ul class="bar_menu">
+<li><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;action=show&amp;rev=0&amp;csid=677572&amp;id=12816" class="selected" title="Page" rel="nofollow">Page</a></li><li><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;action=source&amp;rev=0&amp;csid=677572&amp;id=12816" title="Source" rel="nofollow">Source</a></li><li><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;action=subscribe&amp;csid=677572&amp;id=12816" title="Watchlist" rel="nofollow">Watchlist</a></li>  </ul>
+    </div>
+    <div class="page">
+<!-- wikipage start -->
+<h1>Projekt2</h1><div class="toc"><table class="toc"><tbody><tr><th colspan="8">Contents</th></tr>
+<tr><td>1</td><td colspan="7"> <a class="internal" href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;csid=677572&amp;id=12816#Projekt_2_-_Itera%C4%8Dn%C3%AD_v%C3%BDpo%C4%8Dty">Projekt 2 - Iterační výpočty</a></td></tr><tr><td>&nbsp;</td><td>1.1</td><td colspan="6"> <a class="internal" href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;csid=677572&amp;id=12816#Popis_projektu">Popis projektu</a></td></tr><tr><td>&nbsp;</td><td>1.2</td><td colspan="6"> <a class="internal" href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;csid=677572&amp;id=12816#Detailn%C3%AD_specifikace">Detailní specifikace</a></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>1.2.1</td><td colspan="5"> <a class="internal" href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;csid=677572&amp;id=12816#P%C5%99eklad_a_odevzd%C3%A1n%C3%AD_zdrojov%C3%A9ho_souboru">Překlad a odevzdání zdrojového souboru</a></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>1.2.2</td><td colspan="5"> <a class="internal" href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;csid=677572&amp;id=12816#Syntax_spu%C5%A1t%C4%9Bn%C3%AD">Syntax spuštění</a></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>1.2.3</td><td colspan="5"> <a class="internal" href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;csid=677572&amp;id=12816#Implementa%C4%8Dn%C3%AD_detaily">Implementační detaily</a></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>1.2.3.1</td><td colspan="4"> <a class="internal" href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;csid=677572&amp;id=12816#Implementace_logaritmu">Implementace logaritmu</a></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>1.2.3.1.1</td><td colspan="3"> <a class="internal" href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;csid=677572&amp;id=12816#pod%C3%BAkol_-_Implementace_Taylorova_polynomu">1. podúkol - Implementace Taylorova polynomu</a></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>1.2.3.1.2</td><td colspan="3"> <a class="internal" href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;csid=677572&amp;id=12816#pod%C3%BAkol_-_Implementace_z%C5%99et%C4%9Bzen%C3%A9ho_zlomku">2. podúkol - Implementace zřetězeného zlomku</a></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>1.2.3.1.3</td><td colspan="3"> <a class="internal" href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;csid=677572&amp;id=12816#pod%C3%BAkol_-_V%C3%BDpo%C4%8Det_exponenci%C3%A1ln%C3%AD_funkce_s_obecn%C3%BDm_z%C3%A1kladem">3. podúkol - Výpočet exponenciální funkce s obecným základem</a></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>1.2.3.1.4</td><td colspan="3"> <a class="internal" href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;csid=677572&amp;id=12816#V%C3%BDstup_programu">Výstup programu</a></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>1.2.4</td><td colspan="5"> <a class="internal" href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;csid=677572&amp;id=12816#P%C5%99%C3%ADklady_vstup%C5%AF_a_v%C3%BDstup%C5%AF">Příklady vstupů a výstupů</a></td></tr><tr><td>&nbsp;</td><td>1.3</td><td colspan="6"> <a class="internal" href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;csid=677572&amp;id=12816#Hodnocen%C3%AD">Hodnocení</a></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>1.3.1</td><td colspan="5"> <a class="internal" href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;csid=677572&amp;id=12816#Pr%C3%A9mie">Prémie</a></td></tr></tbody></table></div>
+
+<h1><span><a name="Projekt_2_-_Iterační_výpočty">Projekt 2 - Iterační výpočty</a></span></h1>
+
+<h2><span><a name="Popis_projektu">Popis projektu</a></span></h2>
+
+<p>
+
+Implementujte výpočet přirozeného logaritmu a exponenciální funkce s obecným základem pouze pomocí matematických operací +,-,*,/.
+</p>
+
+<h2><span><a name="Detailní_specifikace">Detailní specifikace</a></span></h2>
+
+<h3><span><a name="Překlad_a_odevzdání_zdrojového_souboru">Překlad a odevzdání zdrojového souboru</a></span></h3>
+
+<p>
+
+Odevzdání: Program implementujte ve zdrojovém souboru <tt>proj2.c</tt>. Zdrojový soubor odevzdejte prostřednictvím informačního systému.
+</p>
+
+<p>
+
+Překlad: Program překládejte s následujícími argumenty:</p><pre>$ gcc -std=c99 -Wall -Wextra -Werror proj2.c -lm -o proj2</pre>
+
+<p></p>
+
+<h3><span><a name="Syntax_spuštění">Syntax spuštění</a></span></h3>
+
+<p>
+
+Program se spouští v následující podobě:</p><pre>./proj2 --log X N</pre>
+
+nebo<pre>./proj2 --pow X Y N</pre>
+
+<p></p>
+
+<p>
+
+Argumenty programu:
+</p>
+
+<ul>
+<li class="level1"><tt>--log X N</tt> požadavek pro výpočet přirozeného logaritmu z čísla X v N iteracích (Taylorova polynomu a zřetězeného zlomku).</li>
+<li class="level1"><tt>--pow X Y N</tt> požadavek pro výpočet exponenciální funkce z čísla Y s obecným základem X v N iteracích (Taylorova polynomu a zřetězeného zlomku)</li>
+</ul>
+
+<h3><span><a name="Implementační_detaily">Implementační detaily</a></span></h3>
+
+<p>
+
+Je zakázané použít funkce z matematické knihovny. Jedinou výjimkou jsou funkce <tt>log</tt> a <tt>pow</tt> použité pouze pro srovnání výpočtů, funkce <tt>fabs</tt> (kvůli své trivialitě), funkce <tt>isnan</tt> a <tt>isinf</tt> a konstanty NAN a INFINITY. Ve všech výpočtech používejte typ <tt>double</tt>.
+</p>
+
+<h4><span><a name="Implementace_logaritmu">Implementace logaritmu</a></span></h4>
+
+<p>
+
+Funkci logaritmu implementujte dvakrát a to pomocí Taylorova polynomu a zřetězených zlomků.
+</p>
+
+<h5><span><a name="podúkol_-_Implementace_Taylorova_polynomu">1. podúkol - Implementace Taylorova polynomu</a></span></h5>
+
+<p>
+
+Logaritmus pomocí Taylorova polynomu implementujte ve funkci s prototypem:
+</p><div class="c syntax" style="font-family:monospace;"><pre style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #993333;">double</span> taylor_log<span style="color: #009900;">(</span><span style="color: #993333;">double</span> x<span style="color: #339933;">,</span> <span style="color: #993333;">unsigned</span> <span style="color: #993333;">int</span> n<span style="color: #009900;">)</span><span style="color: #339933;">;</span></pre></div>
+kde n udává rozvoj polynomu (počet členů). Taylorův polynom pro funkci logaritmu implementujte podle vzorce:
+<p></p>
+
+<p>
+
+<a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;src=Taylor_log.png&amp;ns=IZP&amp;&amp;action=fileinfo&amp;csid=677572&amp;id=12816" class="media" title="taylor_log.png"><img src="./Wiki_files/Taylor_log.png" class="media " alt=""></a>
+</p>
+
+<p>
+
+pro 0 &lt; x &lt; 2 a
+</p>
+
+<p>
+
+<a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;src=Taylor_log2.png&amp;ns=IZP&amp;&amp;action=fileinfo&amp;csid=677572&amp;id=12816" class="media" title="taylor_log2.png"><img src="./Wiki_files/Taylor_log2.png" class="media " alt=""></a>
+</p>
+
+<p>
+
+pro x &gt; 1/2. Doporučená mezní hodnota mezi těmito dvěma polynomy je 1.
+</p>
+
+<h5><span><a name="podúkol_-_Implementace_zřetězeného_zlomku">2. podúkol - Implementace zřetězeného zlomku</a></span></h5>
+
+<p>
+
+Logaritmus pomocí zřetězených zlomků (viz demonstrační cvičení) implementujte ve funkci s prototypem:
+</p><div class="c syntax" style="font-family:monospace;"><pre style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #993333;">double</span> cfrac_log<span style="color: #009900;">(</span><span style="color: #993333;">double</span> x<span style="color: #339933;">,</span> <span style="color: #993333;">unsigned</span> <span style="color: #993333;">int</span> n<span style="color: #009900;">)</span><span style="color: #339933;">;</span></pre></div>
+kde n udává rozvoj zřetězeného zlomku (počet dělení ve zřetězeném zlomku). Funkci implementujte podle vzorce:
+<p></p>
+
+<p>
+
+<a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;src=Cf_log.png&amp;ns=IZP&amp;&amp;action=fileinfo&amp;csid=677572&amp;id=12816" class="media" title="cf_log.png"><img src="./Wiki_files/Cf_log.png" class="media " alt=""></a>
+</p>
+
+<h5><span><a name="podúkol_-_Výpočet_exponenciální_funkce_s_obecným_základem">3. podúkol - Výpočet exponenciální funkce s obecným základem</a></span></h5>
+
+<p>
+
+Exponenciální funkci s obecným základem počítejte ve funkci s prototypem:
+</p><div class="c syntax" style="font-family:monospace;"><pre style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #993333;">double</span> taylor_pow<span style="color: #009900;">(</span><span style="color: #993333;">double</span> x<span style="color: #339933;">,</span> <span style="color: #993333;">double</span> y<span style="color: #339933;">,</span> <span style="color: #993333;">unsigned</span> <span style="color: #993333;">int</span> n<span style="color: #009900;">)</span><span style="color: #339933;">;</span></pre></div>
+a
+<div class="c syntax" style="font-family:monospace;"><pre style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #993333;">double</span> taylorcf_pow<span style="color: #009900;">(</span><span style="color: #993333;">double</span> x<span style="color: #339933;">,</span> <span style="color: #993333;">double</span> y<span style="color: #339933;">,</span> <span style="color: #993333;">unsigned</span> <span style="color: #993333;">int</span> n<span style="color: #009900;">)</span><span style="color: #339933;">;</span></pre></div>
+kde n udává rozvoj polynomu (počet členů) a parametry x a y odpovídají parametrům funkce pow z matematické knihovny. Taylorův polynom pro exponenciální funkci implementujte podle vzorce:
+<p></p>
+
+<p>
+
+<a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;src=Taylor_pow.png&amp;ns=IZP&amp;&amp;action=fileinfo&amp;csid=677572&amp;id=12816" class="media" title="taylor_pow.png"><img src="./Wiki_files/Taylor_pow.png" class="media " alt=""></a>
+</p>
+
+<p>
+
+pro a &gt; 0.
+</p>
+
+<p>
+
+Pro výpočet přirozeného logaritmu použijte funkci taylor_log v případě funkce taylor_pow a funkci cfrac_log v případě funkce taylorcf_pow.
+</p>
+
+<h5><span><a name="Výstup_programu">Výstup programu</a></span></h5>
+
+<p>
+
+V případě výpočtu logaritmu (argument <tt>--log</tt>) program tiskne následující řádky:</p><pre>       log(X) = LOG_X
+ cfrac_log(X) = CFRAC_LOG_X
+taylor_log(X) = TAYLOR_LOG_X</pre>
+
+<p></p>
+
+<p>
+
+V případě výpočtu exponenciální funkce (argument <tt>--pow</tt>) program tiskne následující řádky:</p><pre>         pow(X,Y) = POW
+  taylor_pow(X,Y) = TAYLOR_POW
+taylorcf_pow(X,Y) = TAYLORCF_POW</pre>
+
+<p></p>
+
+<p>
+
+kde:
+</p>
+
+<ul>
+<li class="level1"><tt>X</tt> a <tt>Y</tt> jsou hodnoty zadané argumentem příkazové řádky (odpovídají formátu printf <tt>%g</tt>),</li>
+<li class="level1"><tt>LOG_X</tt> je hodnota logaritmu z matematické knihovny,</li>
+<li class="level1"><tt>CFRAC_LOG_</tt> jsou hodnoty logaritmu vypočteného pomocí zřetězeného zlomku,</li>
+<li class="level1"><tt>TAYLOR_LOG_</tt> jsou hodnoty logaritmu vypočteného pomocí Taylorova polynomu,</li>
+<li class="level1"><tt>POW</tt> je hodnota exponenciální funkce z matematické knihovny,</li>
+<li class="level1"><tt>TAYLOR_POW</tt> je hodnota vypočtená pomocí funkce <tt>taylor_pow</tt>,</li>
+<li class="level1"><tt>TAYLORCF_POW</tt> je hodnota vypočtená pomocí funkce <tt>taylorcf_pow</tt>,</li>
+<li class="level1">všechny <tt>*LOG_*</tt> a <tt>*POW</tt> hodnoty odpovídají formátu <tt>%.12g</tt>.</li>
+</ul>
+
+<h3><span><a name="Příklady_vstupů_a_výstupů">Příklady vstupů a výstupů</a></span></h3>
+
+<p>
+
+<i>Číselné údaje nemusí přesně odpovídat vaší implementaci. Výsledek závisí na způsobu implementace a optimalizaci.</i>
+</p>
+
+<p>
+</p><pre>$ ./proj2 --log 1.131401114526 4
+       log(1.1314) = 0.123456789012
+ cfrac_log(1.1314) = 0.123456789012
+taylor_log(1.1314) = 0.123452108537</pre>
+
+<p></p>
+
+<p>
+</p><pre>$ ./proj2 --pow 1.23 4.2 4
+         pow(1.23,4.2) = 2.38562110403
+  taylor_pow(1.23,4.2) = 2.38026034593
+taylorcf_pow(1.23,4.2) = 2.38079698151</pre>
+
+<p></p>
+
+<h2><span><a name="Hodnocení">Hodnocení</a></span></h2>
+
+<p>
+
+Na výsledném hodnocení mají hlavní vliv následující faktory:
+</p>
+
+<ul>
+<li class="level1">implementace algoritmických schemat pro iterační výpočty,</li>
+<li class="level1">výpočet logaritmu a exponenciální funkce,</li>
+<li class="level1">ošetření neočekávaných stavů.</li>
+</ul>
+
+<h3><span><a name="Prémie">Prémie</a></span></h3>
+
+<p>
+
+Prémiové body (max 4) je možné získat implementací alternativní funkce k funkcím log a pow. Alternativní funkce budou implementovány v prototypech:
+</p>
+
+<p>
+
+</p><div class="c syntax" style="font-family:monospace;"><pre style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #993333;">double</span> mylog<span style="color: #009900;">(</span><span style="color: #993333;">double</span> x<span style="color: #009900;">)</span><span style="color: #339933;">;</span></pre></div>
+<p></p>
+
+<p>
+
+a
+</p>
+
+<p>
+
+</p><div class="c syntax" style="font-family:monospace;"><pre style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #993333;">double</span> mypow<span style="color: #009900;">(</span><span style="color: #993333;">double</span> x<span style="color: #339933;">,</span> <span style="color: #993333;">double</span> y<span style="color: #009900;">)</span><span style="color: #339933;">;</span></pre></div>
+<p></p>
+
+<p>
+
+Obě funkce budou podle hodnoty zadaného argumentu volit nejpřesnější typ výpočtu (Taylorův polynom nebo zřetězené zlomky) a minimální počet iterací pro požadovanou přesnost. Nechť požadovaná přesnost je na 8 významných číslic (tj. odpovídá výstupnímu formátu %.7e přesného výsledku). Podmínkou pro udělení prémiových bodů je úspěšná obhajoba projektu a prémiového vypracování.
+</p>
+<div class="clearer"></div>   <!-- wikipage end -->
+    </div>
+
+    <div class="footer">
+      <div class="wiki_top"><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php?title=Projekt2&amp;csid=677572&amp;id=12816#top" onclick="window.scrollTo(0, 0)" title="Top">Top</a>
+      </div>
+      <div class="meta">
+        <div class="user">
+    </div>
+      <div class="doc">Page id: 156, revision: 9865, modified: 2018-11-01 20:27:14 by smrcka</div>
+      </div>
+    </div>
+</div>
+</td></tr>
+</tbody></table>
+</td></tr></tbody></table><div class="noprint">
+<address>&#169;Faculty of information technology, BUT, Božetěchova 2, 612 66 Brno<br>For questions or comments contact <a href="mailto:lampa@fit.vutbr.cz">lampa@fit.vutbr.cz</a></address></div>
+
+
+</body></html>
