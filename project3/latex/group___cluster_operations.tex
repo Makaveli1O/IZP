@@ -1,0 +1,315 @@
+\hypertarget{group___cluster_operations}{}\section{Operations over clusters}
+\label{group___cluster_operations}\index{Operations over clusters@{Operations over clusters}}
+
+
+Functions that does operations over clusters.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___cluster_operations_ga96db0862471d90abb3d80103ef3695f7}{init\+\_\+cluster}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$c, int cap)
+\begin{DoxyCompactList}\small\item\em Initialization of cluster \char`\"{}c\char`\"{} with capacity of \char`\"{}cap\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___cluster_operations_ga8289f092f205baeb13cf33cfffa15324}{clear\+\_\+cluster}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Clearing cluster \char`\"{}c\char`\"{} of all objects and initialization to an empty cluster. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$ \mbox{\hyperlink{group___cluster_operations_ga0d8702f8bee3bccb81380e012a615a3d}{resize\+\_\+cluster}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$c, int new\+\_\+cap)
+\begin{DoxyCompactList}\small\item\em Resizing cluster \char`\"{}c\char`\"{} into desired size \char`\"{}new\+\_\+cap\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___cluster_operations_gab6269b64b2c7f4842a51c58b2d86a2e5}{append\+\_\+cluster}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$c, struct \mbox{\hyperlink{structobj__t}{obj\+\_\+t}} obj)
+\begin{DoxyCompactList}\small\item\em Appending cluster with object\char`\"{}obj\+\_\+t\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___cluster_operations_gac39a25fdec1f4952ec92ee5407893158}{merge\+\_\+clusters}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$c1, struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$c2)
+\begin{DoxyCompactList}\small\item\em Merging two clusters togetether. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___cluster_operations_gaf73744f9128e4605127b40932a730a48}{remove\+\_\+cluster}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$carr, int narr, int idx)
+\begin{DoxyCompactList}\small\item\em Removing cluster \char`\"{}c\char`\"{} from clusters array \char`\"{}carr\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___cluster_operations_ga12718af9e3e31b61bf703ec260e22450}{sort\+\_\+cluster}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Sorting clusters by ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___cluster_operations_ga322bfd43ab7a3fa830cd69e79b7eef06}{print\+\_\+cluster}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Printing clusters. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___cluster_operations_ga9d928923d43120cb53ddff210a087061}{load\+\_\+clusters}} (char $\ast$filename, struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$$\ast$arr)
+\begin{DoxyCompactList}\small\item\em Loading objects and creating clusters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___cluster_operations_gad350e6021e5fead00ff2eeec4d134525}{print\+\_\+clusters}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$carr, int narr)
+\begin{DoxyCompactList}\small\item\em Prints multiple clusters to S\+T\+D\+O\+UT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions that does operations over clusters. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___cluster_operations_gab6269b64b2c7f4842a51c58b2d86a2e5}\label{group___cluster_operations_gab6269b64b2c7f4842a51c58b2d86a2e5}} 
+\index{Operations over clusters@{Operations over clusters}!append\+\_\+cluster@{append\+\_\+cluster}}
+\index{append\+\_\+cluster@{append\+\_\+cluster}!Operations over clusters@{Operations over clusters}}
+\subsubsection{\texorpdfstring{append\+\_\+cluster()}{append\_cluster()}}
+{\footnotesize\ttfamily void append\+\_\+cluster (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$}]{c,  }\item[{struct \mbox{\hyperlink{structobj__t}{obj\+\_\+t}}}]{obj }\end{DoxyParamCaption})}
+
+
+
+Appending cluster with object\char`\"{}obj\+\_\+t\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & is pointer to actual cluster\\
+\hline
+{\em obj} & is object that we want cluster to be appended with\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+
+\begin{DoxyItemize}
+\item \char`\"{}c\char`\"{} is not N\+U\+LL
+\item \char`\"{}obj\char`\"{} is not N\+U\+LL
+\end{DoxyItemize}
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Appends cluster \char`\"{}c\char`\"{} with object \char`\"{}obj\char`\"{}, increases size with \char`\"{}resize\+\_\+cluster\char`\"{} if necessary 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{group___cluster_operations_ga8289f092f205baeb13cf33cfffa15324}\label{group___cluster_operations_ga8289f092f205baeb13cf33cfffa15324}} 
+\index{Operations over clusters@{Operations over clusters}!clear\+\_\+cluster@{clear\+\_\+cluster}}
+\index{clear\+\_\+cluster@{clear\+\_\+cluster}!Operations over clusters@{Operations over clusters}}
+\subsubsection{\texorpdfstring{clear\+\_\+cluster()}{clear\_cluster()}}
+{\footnotesize\ttfamily void clear\+\_\+cluster (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Clearing cluster \char`\"{}c\char`\"{} of all objects and initialization to an empty cluster. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & is pointer to actual cluster\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+
+\begin{DoxyItemize}
+\item \char`\"{}c\char`\"{} is not N\+U\+LL
+\end{DoxyItemize}
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+
+\begin{DoxyItemize}
+\item each object from cluster \char`\"{}c\char`\"{} is removed. Initialized to en empty cluster. 
+\end{DoxyItemize}
+\end{DoxyPostcond}
+\mbox{\Hypertarget{group___cluster_operations_ga96db0862471d90abb3d80103ef3695f7}\label{group___cluster_operations_ga96db0862471d90abb3d80103ef3695f7}} 
+\index{Operations over clusters@{Operations over clusters}!init\+\_\+cluster@{init\+\_\+cluster}}
+\index{init\+\_\+cluster@{init\+\_\+cluster}!Operations over clusters@{Operations over clusters}}
+\subsubsection{\texorpdfstring{init\+\_\+cluster()}{init\_cluster()}}
+{\footnotesize\ttfamily void init\+\_\+cluster (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$}]{c,  }\item[{int}]{cap }\end{DoxyParamCaption})}
+
+
+
+Initialization of cluster \char`\"{}c\char`\"{} with capacity of \char`\"{}cap\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & pointer to actual cluster\\
+\hline
+{\em cap} & desired capacity of cluster(size of cluster)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+
+\begin{DoxyItemize}
+\item \char`\"{}c\char`\"{} is not N\+U\+LL
+\item \char`\"{}cap\char`\"{} is not negative
+\end{DoxyItemize}
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+
+\begin{DoxyItemize}
+\item \char`\"{}c\char`\"{} is initialized to \char`\"{}cap\char`\"{} objects 
+\end{DoxyItemize}
+\end{DoxyPostcond}
+\mbox{\Hypertarget{group___cluster_operations_ga9d928923d43120cb53ddff210a087061}\label{group___cluster_operations_ga9d928923d43120cb53ddff210a087061}} 
+\index{Operations over clusters@{Operations over clusters}!load\+\_\+clusters@{load\+\_\+clusters}}
+\index{load\+\_\+clusters@{load\+\_\+clusters}!Operations over clusters@{Operations over clusters}}
+\subsubsection{\texorpdfstring{load\+\_\+clusters()}{load\_clusters()}}
+{\footnotesize\ttfamily int load\+\_\+clusters (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename,  }\item[{struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$$\ast$}]{arr }\end{DoxyParamCaption})}
+
+
+
+Loading objects and creating clusters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & is name of the actual file, which we want object informations from\\
+\hline
+{\em arr} & is pointer to the beginning of the array of clusters\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+
+\begin{DoxyItemize}
+\item \char`\"{}arr\char`\"{} is not N\+U\+LL
+\item file \char`\"{}filename\char`\"{} exists
+\item file is written exactly in specific format
+\item coords in file must meet requirements 0 $<$ N $<$ 1000
+\end{DoxyItemize}
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Function loads objects from the file \char`\"{}filename\char`\"{}, and creates cluster for each loaded object. Each object is saved into cluster array \char`\"{}arr\char`\"{}
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+Function returns number of loaded objects. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___cluster_operations_gac39a25fdec1f4952ec92ee5407893158}\label{group___cluster_operations_gac39a25fdec1f4952ec92ee5407893158}} 
+\index{Operations over clusters@{Operations over clusters}!merge\+\_\+clusters@{merge\+\_\+clusters}}
+\index{merge\+\_\+clusters@{merge\+\_\+clusters}!Operations over clusters@{Operations over clusters}}
+\subsubsection{\texorpdfstring{merge\+\_\+clusters()}{merge\_clusters()}}
+{\footnotesize\ttfamily void merge\+\_\+clusters (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$}]{c1,  }\item[{struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$}]{c2 }\end{DoxyParamCaption})}
+
+
+
+Merging two clusters togetether. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c1} & is pointer to first cluster\\
+\hline
+{\em c2} & is pointer to second cluster\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+
+\begin{DoxyItemize}
+\item \char`\"{}c1\char`\"{} is not N\+U\+LL
+\item \char`\"{}c2\char`\"{} is not N\+U\+LL
+\end{DoxyItemize}
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Merges two cluster \char`\"{}c1\char`\"{} and \char`\"{}c2\char`\"{} together, creating 1 cluster with objects of each 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{group___cluster_operations_ga322bfd43ab7a3fa830cd69e79b7eef06}\label{group___cluster_operations_ga322bfd43ab7a3fa830cd69e79b7eef06}} 
+\index{Operations over clusters@{Operations over clusters}!print\+\_\+cluster@{print\+\_\+cluster}}
+\index{print\+\_\+cluster@{print\+\_\+cluster}!Operations over clusters@{Operations over clusters}}
+\subsubsection{\texorpdfstring{print\+\_\+cluster()}{print\_cluster()}}
+{\footnotesize\ttfamily void print\+\_\+cluster (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Printing clusters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & is pointer to actual cluster\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+
+\begin{DoxyItemize}
+\item \char`\"{}c\char`\"{} is not N\+U\+LL
+\end{DoxyItemize}
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Prints cluster \char`\"{}c\char`\"{} to S\+T\+D\+O\+UT. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{group___cluster_operations_gad350e6021e5fead00ff2eeec4d134525}\label{group___cluster_operations_gad350e6021e5fead00ff2eeec4d134525}} 
+\index{Operations over clusters@{Operations over clusters}!print\+\_\+clusters@{print\+\_\+clusters}}
+\index{print\+\_\+clusters@{print\+\_\+clusters}!Operations over clusters@{Operations over clusters}}
+\subsubsection{\texorpdfstring{print\+\_\+clusters()}{print\_clusters()}}
+{\footnotesize\ttfamily void print\+\_\+clusters (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$}]{carr,  }\item[{int}]{narr }\end{DoxyParamCaption})}
+
+
+
+Prints multiple clusters to S\+T\+D\+O\+UT. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carr} & is array of cluster.\\
+\hline
+{\em narr} & is desired number of clusters in \char`\"{}carr\char`\"{} array, to be printed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+
+\begin{DoxyItemize}
+\item \char`\"{}carr\char`\"{} is not N\+U\+LL
+\item \char`\"{}narr\char`\"{} is greater than 0
+\end{DoxyItemize}
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Specific information of \char`\"{}\+Narr\char`\"{} number of cluster from \char`\"{}carr\char`\"{} are printed to stdout. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{group___cluster_operations_gaf73744f9128e4605127b40932a730a48}\label{group___cluster_operations_gaf73744f9128e4605127b40932a730a48}} 
+\index{Operations over clusters@{Operations over clusters}!remove\+\_\+cluster@{remove\+\_\+cluster}}
+\index{remove\+\_\+cluster@{remove\+\_\+cluster}!Operations over clusters@{Operations over clusters}}
+\subsubsection{\texorpdfstring{remove\+\_\+cluster()}{remove\_cluster()}}
+{\footnotesize\ttfamily int remove\+\_\+cluster (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$}]{carr,  }\item[{int}]{narr,  }\item[{int}]{idx }\end{DoxyParamCaption})}
+
+
+
+Removing cluster \char`\"{}c\char`\"{} from clusters array \char`\"{}carr\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carr} & is pointer to actual clusters array\\
+\hline
+{\em narr} & is number of clusters in \char`\"{}carr\char`\"{}\\
+\hline
+{\em idx} & is index of desired cluster which you want to be removed\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+
+\begin{DoxyItemize}
+\item \char`\"{}idx\char`\"{} is not greater than \char`\"{}narr\char`\"{}
+\item \char`\"{}narr\char`\"{} is greater than 0 
+\end{DoxyItemize}
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+Function returns number of clusters in array (after removing) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___cluster_operations_ga0d8702f8bee3bccb81380e012a615a3d}\label{group___cluster_operations_ga0d8702f8bee3bccb81380e012a615a3d}} 
+\index{Operations over clusters@{Operations over clusters}!resize\+\_\+cluster@{resize\+\_\+cluster}}
+\index{resize\+\_\+cluster@{resize\+\_\+cluster}!Operations over clusters@{Operations over clusters}}
+\subsubsection{\texorpdfstring{resize\+\_\+cluster()}{resize\_cluster()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}}$\ast$ resize\+\_\+cluster (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$}]{c,  }\item[{int}]{new\+\_\+cap }\end{DoxyParamCaption})}
+
+
+
+Resizing cluster \char`\"{}c\char`\"{} into desired size \char`\"{}new\+\_\+cap\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & is pointer to actual cluster\\
+\hline
+{\em new\+\_\+cap} & is new size of cluster\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+
+\begin{DoxyItemize}
+\item \char`\"{}c\char`\"{} is not N\+U\+LL
+\item \char`\"{}new\+\_\+cap\char`\"{} is not negative
+\end{DoxyItemize}
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item Resized cluster to \char`\"{}new\+\_\+cap\char`\"{} 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___cluster_operations_ga12718af9e3e31b61bf703ec260e22450}\label{group___cluster_operations_ga12718af9e3e31b61bf703ec260e22450}} 
+\index{Operations over clusters@{Operations over clusters}!sort\+\_\+cluster@{sort\+\_\+cluster}}
+\index{sort\+\_\+cluster@{sort\+\_\+cluster}!Operations over clusters@{Operations over clusters}}
+\subsubsection{\texorpdfstring{sort\+\_\+cluster()}{sort\_cluster()}}
+{\footnotesize\ttfamily void sort\+\_\+cluster (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Sorting clusters by ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & is pointer to actual cluster\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+
+\begin{DoxyItemize}
+\item \char`\"{}c\char`\"{} is not N\+U\+LL
+\end{DoxyItemize}
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Sorts objects in cluster \char`\"{}c\char`\"{} in ascending order, by their identification number 
+\end{DoxyPostcond}

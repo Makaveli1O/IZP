@@ -1,0 +1,60 @@
+\hypertarget{proj3_8h}{}\section{proj3.\+h File Reference}
+\label{proj3_8h}\index{proj3.\+h@{proj3.\+h}}
+
+
+Program demonstrates usage of cluster analysis  Program loads file filled with object informations, such as ID, X-\/coord, Y-\/coord and number of objects which are transformed into clusters using structures, functions that does numeric calculations with clusters, which can be suited for your need depending on your input program arguments.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structobj__t}{obj\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Object structure with attributes of object, such as coords and ID. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em structure containing cluster \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___cluster_operations_ga96db0862471d90abb3d80103ef3695f7}{init\+\_\+cluster}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$c, int cap)
+\begin{DoxyCompactList}\small\item\em Initialization of cluster \char`\"{}c\char`\"{} with capacity of \char`\"{}cap\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___cluster_operations_ga8289f092f205baeb13cf33cfffa15324}{clear\+\_\+cluster}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Clearing cluster \char`\"{}c\char`\"{} of all objects and initialization to an empty cluster. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$ \mbox{\hyperlink{group___cluster_operations_ga0d8702f8bee3bccb81380e012a615a3d}{resize\+\_\+cluster}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$c, int new\+\_\+cap)
+\begin{DoxyCompactList}\small\item\em Resizing cluster \char`\"{}c\char`\"{} into desired size \char`\"{}new\+\_\+cap\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___cluster_operations_gab6269b64b2c7f4842a51c58b2d86a2e5}{append\+\_\+cluster}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$c, struct \mbox{\hyperlink{structobj__t}{obj\+\_\+t}} obj)
+\begin{DoxyCompactList}\small\item\em Appending cluster with object\char`\"{}obj\+\_\+t\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___cluster_operations_gac39a25fdec1f4952ec92ee5407893158}{merge\+\_\+clusters}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$c1, struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$c2)
+\begin{DoxyCompactList}\small\item\em Merging two clusters togetether. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___cluster_operations_gaf73744f9128e4605127b40932a730a48}{remove\+\_\+cluster}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$carr, int narr, int idx)
+\begin{DoxyCompactList}\small\item\em Removing cluster \char`\"{}c\char`\"{} from clusters array \char`\"{}carr\char`\"{}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___cluster_calculations_ga703ce6afddf65026b68645bc5394405b}{obj\+\_\+distance}} (struct \mbox{\hyperlink{structobj__t}{obj\+\_\+t}} $\ast$o1, struct \mbox{\hyperlink{structobj__t}{obj\+\_\+t}} $\ast$o2)
+\begin{DoxyCompactList}\small\item\em Calculating distance between two clusters. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___cluster_calculations_gaf336f28a62c28da792f6def84f432bb2}{cluster\+\_\+distance}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$c1, struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$c2)
+\begin{DoxyCompactList}\small\item\em Calculating distance between two clusters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___cluster_calculations_ga5f16d682e7c859f7bd3f27697c2b7cc0}{find\+\_\+neighbours}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$carr, int narr, int $\ast$c1, int $\ast$c2)
+\begin{DoxyCompactList}\small\item\em Finding two closest clusters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___cluster_operations_ga12718af9e3e31b61bf703ec260e22450}{sort\+\_\+cluster}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Sorting clusters by ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___cluster_operations_ga322bfd43ab7a3fa830cd69e79b7eef06}{print\+\_\+cluster}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Printing clusters. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___cluster_operations_ga9d928923d43120cb53ddff210a087061}{load\+\_\+clusters}} (char $\ast$filename, struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$$\ast$arr)
+\begin{DoxyCompactList}\small\item\em Loading objects and creating clusters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___cluster_operations_gad350e6021e5fead00ff2eeec4d134525}{print\+\_\+clusters}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$carr, int narr)
+\begin{DoxyCompactList}\small\item\em Prints multiple clusters to S\+T\+D\+O\+UT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{proj3_8h_afb09f2bf4615f5ac7a91807aa086d4c3}\label{proj3_8h_afb09f2bf4615f5ac7a91807aa086d4c3}} 
+const int {\bfseries C\+L\+U\+S\+T\+E\+R\+\_\+\+C\+H\+U\+NK}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Program demonstrates usage of cluster analysis  Program loads file filled with object informations, such as ID, X-\/coord, Y-\/coord and number of objects which are transformed into clusters using structures, functions that does numeric calculations with clusters, which can be suited for your need depending on your input program arguments. 
+
+\begin{DoxyAuthor}{Author}
+Samuel Líška 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+December 6 2018 
+\end{DoxyDate}

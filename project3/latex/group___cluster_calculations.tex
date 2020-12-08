@@ -1,0 +1,110 @@
+\hypertarget{group___cluster_calculations}{}\section{Calculations over clusters}
+\label{group___cluster_calculations}\index{Calculations over clusters@{Calculations over clusters}}
+
+
+Functions that does calculations with clusters.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{group___cluster_calculations_ga703ce6afddf65026b68645bc5394405b}{obj\+\_\+distance}} (struct \mbox{\hyperlink{structobj__t}{obj\+\_\+t}} $\ast$o1, struct \mbox{\hyperlink{structobj__t}{obj\+\_\+t}} $\ast$o2)
+\begin{DoxyCompactList}\small\item\em Calculating distance between two clusters. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___cluster_calculations_gaf336f28a62c28da792f6def84f432bb2}{cluster\+\_\+distance}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$c1, struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$c2)
+\begin{DoxyCompactList}\small\item\em Calculating distance between two clusters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___cluster_calculations_ga5f16d682e7c859f7bd3f27697c2b7cc0}{find\+\_\+neighbours}} (struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$carr, int narr, int $\ast$c1, int $\ast$c2)
+\begin{DoxyCompactList}\small\item\em Finding two closest clusters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions that does calculations with clusters. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___cluster_calculations_gaf336f28a62c28da792f6def84f432bb2}\label{group___cluster_calculations_gaf336f28a62c28da792f6def84f432bb2}} 
+\index{Calculations over clusters@{Calculations over clusters}!cluster\+\_\+distance@{cluster\+\_\+distance}}
+\index{cluster\+\_\+distance@{cluster\+\_\+distance}!Calculations over clusters@{Calculations over clusters}}
+\subsubsection{\texorpdfstring{cluster\+\_\+distance()}{cluster\_distance()}}
+{\footnotesize\ttfamily float cluster\+\_\+distance (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$}]{c1,  }\item[{struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$}]{c2 }\end{DoxyParamCaption})}
+
+
+
+Calculating distance between two clusters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c1} & is pointer to first cluster structure\\
+\hline
+{\em c2} & is pointer to second cluster structure\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+
+\begin{DoxyItemize}
+\item \char`\"{}c1\char`\"{} is not N\+U\+LL
+\item \char`\"{}c2\char`\"{} is not N\+U\+LL
+\end{DoxyItemize}
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+Function returns floating number distance between two clusters \char`\"{}c1\char`\"{} and \char`\"{}c2\char`\"{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___cluster_calculations_ga5f16d682e7c859f7bd3f27697c2b7cc0}\label{group___cluster_calculations_ga5f16d682e7c859f7bd3f27697c2b7cc0}} 
+\index{Calculations over clusters@{Calculations over clusters}!find\+\_\+neighbours@{find\+\_\+neighbours}}
+\index{find\+\_\+neighbours@{find\+\_\+neighbours}!Calculations over clusters@{Calculations over clusters}}
+\subsubsection{\texorpdfstring{find\+\_\+neighbours()}{find\_neighbours()}}
+{\footnotesize\ttfamily void find\+\_\+neighbours (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structcluster__t}{cluster\+\_\+t}} $\ast$}]{carr,  }\item[{int}]{narr,  }\item[{int $\ast$}]{c1,  }\item[{int $\ast$}]{c2 }\end{DoxyParamCaption})}
+
+
+
+Finding two closest clusters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carr} & is pointer to an array of clusters\\
+\hline
+{\em narr} & is size of the \char`\"{}carr\char`\"{} array\\
+\hline
+{\em c1} & is pointer to first cluster structure\\
+\hline
+{\em c2} & is pointer to second cluster structure\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+
+\begin{DoxyItemize}
+\item \char`\"{}narr\char`\"{} is greater than 0
+\end{DoxyItemize}
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Function is calculating distance between each cluster and finds the closest neighbour 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{group___cluster_calculations_ga703ce6afddf65026b68645bc5394405b}\label{group___cluster_calculations_ga703ce6afddf65026b68645bc5394405b}} 
+\index{Calculations over clusters@{Calculations over clusters}!obj\+\_\+distance@{obj\+\_\+distance}}
+\index{obj\+\_\+distance@{obj\+\_\+distance}!Calculations over clusters@{Calculations over clusters}}
+\subsubsection{\texorpdfstring{obj\+\_\+distance()}{obj\_distance()}}
+{\footnotesize\ttfamily float obj\+\_\+distance (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structobj__t}{obj\+\_\+t}} $\ast$}]{o1,  }\item[{struct \mbox{\hyperlink{structobj__t}{obj\+\_\+t}} $\ast$}]{o2 }\end{DoxyParamCaption})}
+
+
+
+Calculating distance between two clusters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em o1} & is pointer to first cluster\\
+\hline
+{\em o2} & is pointer to second cluster\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+
+\begin{DoxyItemize}
+\item \char`\"{}c1\char`\"{} is not N\+U\+LL
+\item \char`\"{}c2\char`\"{} is not N\+U\+LL
+\item \char`\"{}c1\char`\"{} size is greater than 0
+\item \char`\"{}c2\char`\"{} size is greater than 0
+\end{DoxyItemize}
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+Function returns distance between cluster \char`\"{}c1\char`\"{} and cluster \char`\"{}c2\char`\"{} 
+\end{DoxyReturn}
